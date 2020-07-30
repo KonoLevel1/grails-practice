@@ -2,7 +2,13 @@
 
 
 ### ドキュメント
+Grails4.04
+<br>
 https://docs.grails.org/4.0.4/guide/single.html#conventionOverConfiguration
+<br>
+Grails超入門チュートリアル
+<br>
+https://www.slideshare.net/ikufumisato1/grails-106265680
 
 ### 構成
 
