@@ -19,4 +19,4 @@ WARNING: Please consider reporting this to the maintainers of org.codehaus.groov
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
 ```
-Goovyがリフレクションにより、本来アクセスできないはずのシグネチャにアクセスしている為、警告が発生している。<br>実害はないので現状無視する
+Goovyがリフレクションにより、<br>本来アクセスできないはずのシグネチャにアクセスしている為、警告が発生している。<br>実害はないので現状無視する
