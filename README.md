@@ -15,6 +15,9 @@ https://www.slideshare.net/ikufumisato1/grails-106265680
 * **helloworld**<br>
 公式チュートリアル「HelloWorld」の表示<br>
 http://localhost:8080/helloworld/hello/index アクセスで文字列表示
+* **demo**<br>
+ToDoメモの作成<br>
+http://localhost:8081/todo/index アクセスで文字列登録、一覧表示
 
 ### 備考
 **Grailsコマンド入力時の警告**
