@@ -30,7 +30,7 @@ WARNING: All illegal access operations will be denied in a future release
 ```
 Goovyがリフレクションにより、<br>本来アクセスできないはずのシグネチャにアクセスしている為、警告が発生している。<br>実害はないので現状無視する
 
-* **デバッグ**
+* **デバッグ**<br>
 Intellijで、Run > Edit Configurations > Remote > 任意の名前をつけてOK
 ```
 grails run-app --debug-jvm
