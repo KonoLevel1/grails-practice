@@ -32,6 +32,9 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
             pattern = "%level %logger - %msg%n"
         }
     }
+    // ロガーメソッドは４つの引数を取り、後ろの２つは任意
+    // logger("ロガー名", ロガーのログレベル, List<String>, Boolean)
+    // ログレベルにnullを指定すると、直近の祖先ロガーに指定されたログレベルを継承する
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
 }
 // ルートロガーのログレベルにERRORを設定し、"STDOUT"アペンダーを割り当てる
