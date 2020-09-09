@@ -40,3 +40,7 @@ grails run-app --debug-jvm
 grails> run-app --port=8090
 ```
 
+### データベースコンソール
+H2 database console は JDBCドライバを持つ任意のデータベースをWebブラウザから確認できる便利な機能<br>
+http://localhost:8080/h2-console (バージョン4.0.4時点)
+
