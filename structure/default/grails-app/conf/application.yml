@@ -109,6 +109,10 @@ environments:
     development:
         dataSource:
             # ドメインモデルからデータベースを自動で生成するかどうか　'create-drop' or 'create' or 'update' or 'validate'
+            # create - 起動時に既存のテーブルやインデックスなどを削除することで、既存のスキーマを削除する
+            # create-drop - アプリケーションを停止した時にテーブルを削除する。それ以外はcreateと同様
+            # update - テーブルやデータなどを削除することなく、現在のスキーマを更新する形で存在しないテーブルやインデックスを作成する
+            # validate - データベースは変更されない
             dbCreate: create-drop
             # データベースのJDBC　URL
             url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
