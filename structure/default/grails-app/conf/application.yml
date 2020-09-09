@@ -109,15 +109,18 @@ environments:
     development:
         dataSource:
             dbCreate: create-drop
+            # データベースのJDBC　URL
             url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     test:
         dataSource:
             dbCreate: update
+            # データベースのJDBC URL
             url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     # 本番環境の設定
     production:
         dataSource:
             dbCreate: none
+            # データベースのJDBC URL
             url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
             properties:
                 jmxEnabled: true
