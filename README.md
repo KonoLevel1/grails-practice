@@ -65,22 +65,22 @@ create-unit-test                        ユニットテストを作成
 dependency-report                       Grailsアプリケーションの依存関係を出力
 generate-all                            CRUD操作と関連するビューを実行するコントローラーを生成
 generate-async-controller               CRUD操作を実行する非同期コントローラーを作成
-generate-controller                     Generates a controller that performs CRUD operations
-generate-views                          Generates GSP views for the specified domain class
-gradle                                  Allows running of Gradle tasks
-help                                    Prints help information for a specific command
-install-templates                       Installs scaffolding templates that use f:all to render properties
-list-plugins                            Lists available plugins from the Plugin Repository
-open                                    Opens a file in the project
-plugin-info                             Prints information about the given plugin
-run-app                                 Runs a Grails application
-run-command                             Executes Grails commands
-run-script                              Executes Groovy scripts in a Grails context
-schema-export                           Creates a DDL file of the database schema
-shell                                   Runs the Grails interactive shell
-stats                                   Prints statistics about the project
-stop-app                                Stops the running Grails application
-test-app                                Runs the applications tests
-url-mappings-report                     Prints out a report of the project's URL mappings
+generate-controller                     CRUD操作を実行するコントローラーを作成
+generate-views                          指定されたドメインクラスのGSPビューを生成
+gradle                                  Gradleタスクの実行を許可
+help                                    コマンドのヘルプ情報を出力
+install-templates                       プロパティをレンダリングするためにf:allを仕様するスカフォールドテンプレートをインストール
+list-plugins                            プラグインリポジトリから利用可能なプラグインを一覧表示
+open                                    プロジェクト内のファイルを開く
+plugin-info                             指定されたプラグインに関する情報を出力
+run-app                                 Grailsアプリケーションを実行
+run-command                             Grailsコマンドを実行
+run-script                              GrailsコンテキストでGroovyスクリプトを実行
+schema-export                           データベーススキーマのDDLファイルを作成
+shell                                   Grails対話型シェルを実行
+stats                                   プロジェクトに関する統計を出力
+stop-app                                実行中のGrailsアプリケーションを停止
+test-app                                アプリケーションのテストを実行
+url-mappings-report                     プロジェクトのURLマッピングレポートを出力
 
 ```
