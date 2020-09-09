@@ -108,17 +108,20 @@ environments:
     # 開発環境の設定
     development:
         dataSource:
+            # ドメインモデルからデータベースを自動で生成するかどうか　'create-drop' or 'create' or 'update' or 'validate'
             dbCreate: create-drop
             # データベースのJDBC　URL
             url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     test:
         dataSource:
+            # ドメインモデルからデータベースを自動で生成するかどうか　'create-drop' or 'create' or 'update' or 'validate'
             dbCreate: update
             # データベースのJDBC URL
             url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     # 本番環境の設定
     production:
         dataSource:
+            # ドメインモデルからデータベースを自動で生成するかどうか　'create-drop' or 'create' or 'update' or 'validate'
             dbCreate: none
             # データベースのJDBC URL
             url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
