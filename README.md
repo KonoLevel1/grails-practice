@@ -60,11 +60,11 @@ create-interceptor                      インターセプターを作成
 create-scaffold-controller              スカフォールドコントローラーを作成
 create-script                           Grailsスクリプトを作成
 create-service                          サービスを作成
-create-taglib                           Creates a Tag Library
-create-unit-test                        Creates a unit test
-dependency-report                       Prints out the Grails application's dependencies
-generate-all                            Generates a controller that performs CRUD operations and the associated views
-generate-async-controller               Generates an asynchronous controller that performs CRUD operations
+create-taglib                           タグライブラリを作成
+create-unit-test                        ユニットテストを作成
+dependency-report                       Grailsアプリケーションの依存関係を出力
+generate-all                            CRUD操作と関連するビューを実行するコントローラーを生成
+generate-async-controller               CRUD操作を実行する非同期コントローラーを作成
 generate-controller                     Generates a controller that performs CRUD operations
 generate-views                          Generates GSP views for the specified domain class
 gradle                                  Allows running of Gradle tasks
