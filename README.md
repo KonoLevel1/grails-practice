@@ -44,3 +44,43 @@ grails> run-app --port=8090
 H2 database console は JDBCドライバを持つ任意のデータベースをWebブラウザから確認できる便利な機能<br>
 http://localhost:8080/h2-console (バージョン4.0.4時点)
 
+### Grailsコマンド一覧
+```
+assemble                                本番デプロイメント用のJARかWARアーカイブを作成
+bug-report                              現在のプロジェクトの課題レポーチに添付できるzipファイルを作成
+clean                                   Grailsアプリケーションのコンパイル済みソースをクリーンアップ
+compile                                 Grailsアプリケーションをコンパイル
+console                                 Grailsインタラクティブコンソールを実行
+create-command                          アプリケーションコマンドを作成
+create-controller                       コントローラーを作成
+create-domain-class                     ドメインクラスを作成　
+create-functional-test                  Geb機能テストを作成（？）
+create-integration-test                 統合テストを作成
+create-interceptor                      インターセプターを作成
+create-scaffold-controller              スカフォールドコントローラーを作成
+create-script                           Grailsスクリプトを作成
+create-service                          サービスを作成
+create-taglib                           Creates a Tag Library
+create-unit-test                        Creates a unit test
+dependency-report                       Prints out the Grails application's dependencies
+generate-all                            Generates a controller that performs CRUD operations and the associated views
+generate-async-controller               Generates an asynchronous controller that performs CRUD operations
+generate-controller                     Generates a controller that performs CRUD operations
+generate-views                          Generates GSP views for the specified domain class
+gradle                                  Allows running of Gradle tasks
+help                                    Prints help information for a specific command
+install-templates                       Installs scaffolding templates that use f:all to render properties
+list-plugins                            Lists available plugins from the Plugin Repository
+open                                    Opens a file in the project
+plugin-info                             Prints information about the given plugin
+run-app                                 Runs a Grails application
+run-command                             Executes Grails commands
+run-script                              Executes Groovy scripts in a Grails context
+schema-export                           Creates a DDL file of the database schema
+shell                                   Runs the Grails interactive shell
+stats                                   Prints statistics about the project
+stop-app                                Stops the running Grails application
+test-app                                Runs the applications tests
+url-mappings-report                     Prints out a report of the project's URL mappings
+
+```
