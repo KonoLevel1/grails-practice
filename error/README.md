@@ -14,6 +14,8 @@ Configuring Spring Security Core ...
 発生条件
 * grailsコマンドを使用すると発生する
 * windows環境で確認（Macでも発生すると思う）
+* grailsをインストール済み
+* javaをインストール済
 * SDKMANを利用して導入後
 ```
 grails help
@@ -27,4 +29,32 @@ location of your Java installation.
 ```
 お使いの環境でJAVA_HOME変数を設定して、
 Javaインストールの場所。
+```
+解決策
+* JavaとGrailsのパスを設定してやる
+    * .sdkman > candidates > ... の中にJavaとGrailsのbinがあるので取得
+```
+C:\Users\****\.sdkman\candidates\grails\4.0.4\bin
+```
+    
+```
+C:\Users\****\.sdkman\candidates\java\11.0.8-amzn\bin
+```
+* bash_profileにパスを追加する
+```
+vim ~/.bash_profile
+```
+* "vim"コマンドとは
+    * vim（ビム）と呼ばれるテキストエディタを起動するコマンド
+```
+export PATH=$PATH:C:\Users\****\.sdkman\candidates\grails\4.0.4\bin
+export PATH=$PATH:C:\Users\****\.sdkman\candidates\java\11.0.8-amzn\bin
+```
+* 入力内容を保存
+    * ESCキー > wq（保存） > Enterキー
+* 入力内容を間違えて破棄したい場合は
+    * ESCキー > q!（破棄） > Enterキー
+* 変更内容を反映する
+```
+source ~/.bash_profile
 ```
