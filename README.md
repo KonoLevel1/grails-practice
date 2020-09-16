@@ -20,6 +20,8 @@ https://www.slideshare.net/ikufumisato1/grails-106265680
     * http://localhost:8081/todo/index アクセスで文字列登録、一覧表示
 * **bookstore**
     * [SpringSecurityCoreチュートリアル](https://grails-plugins.github.io/grails-spring-security-core/4.0.x/index.html#tutorials)
+    * ユーザーネーム「me」パスワード「password」
+    * デフォルトページをsecureに変更しています。
 
 ### 備考
 **Grailsコマンド入力時の警告**
