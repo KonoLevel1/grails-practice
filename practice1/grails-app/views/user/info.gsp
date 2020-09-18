@@ -33,16 +33,23 @@
     </section>
     <div class="center">
     <g:renderErrors bean="${errorUser}" as="list" field="user"/>
-                <form controller="user" action="../registration">
-                    <input name="userName" placeholder="お給料">
-                    <input name="userName" placeholder="12345">
+                <form controller="money" action="../money/plus">
+                    <input name="memo" placeholder="お給料">
+                    <input name="amount" placeholder="12345">
+                    <input type="hidden" name="userName" value=${userName}>
                     <button type="submit" class="btn btn-dark">収入登録</button>
                 </form>
-                   <form controller="user" action="../registration">
-                       <input name="userName" placeholder="食費">
-                       <input name="userName" placeholder="12345">
+                   <form controller="money" action="../money/minus">
+                       <input name="memo" placeholder="食費">
+                       <input name="amount" placeholder="12345">
+                       <input type="hidden" name="userName" value=${userName}>
                        <button type="submit" class="btn btn-danger">支出登録</button>
-                   </form>
+                 </form>
+                 <ul>
+                 <g:each in="${Moneys}" var="moeny">
+                    <li>${money}</li>
+                 </g:each>
+                 </ul>
     </div>
 </div>
 

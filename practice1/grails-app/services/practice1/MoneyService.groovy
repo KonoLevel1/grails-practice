@@ -8,4 +8,8 @@ class MoneyService {
     def serviceMethod() {
 
     }
+
+    def saveMoney(Money money){
+        money.save(flush: true, failOnError: true)
+    }
 }

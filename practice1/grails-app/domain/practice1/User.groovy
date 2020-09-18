@@ -31,6 +31,7 @@ class User {
 
     // 制約を設定する
     static constraints = {
+        userName unique: true
     }
 
     // リレーショナル

@@ -37,6 +37,7 @@ class UserController {
         User user = new User(userName: userName, password: password)
         if (user.validate()){
             UserService.saveUser(user)
+            User user2 = User.findByUserName(userName)
             render(view: "/user/info", model:[userName: userName])
         }else{
             println("入力項目がおかしいです")
