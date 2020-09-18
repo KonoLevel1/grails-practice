@@ -33,6 +33,11 @@ class User {
     static constraints = {
     }
 
+    // リレーショナル
+    static hasMany = [
+            money: Money
+    ]
+
     // データベースにドメインクラスをマップする方法を設定する
     static mapping = {
         userName column: 'user_name'
