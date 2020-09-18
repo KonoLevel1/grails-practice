@@ -17,7 +17,7 @@ class Money {
     /**
      * 金額
      */
-    Integer money
+    Integer amount
 
     /**
      * 作成日時
@@ -32,13 +32,13 @@ class Money {
     static constraints = {
     }
 
-    static belongsTo = [user: User]
+    //static belongsTo = [user: User]
 
     // データベースにドメインクラスをマップする方法を設定する
     static mapping = {
         userId column: 'user_id'
         memo column: 'memo'
-        money column: 'money'
+        amount column: 'amount'
         createTime column: 'create_time'
         deleteFlag column: 'delete_flag'
     }
