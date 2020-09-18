@@ -24,6 +24,7 @@ https://www.slideshare.net/ikufumisato1/grails-106265680
     * http://localhost:8080/helloworld/hello/index アクセスで文字列表示
 * **practice1**
     * 練習用アプリ
+    * お小遣い帳的なものを作る
 
 
 
