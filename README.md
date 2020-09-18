@@ -1,6 +1,6 @@
 # grails-practice
 
-
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/KonoLevel1/grails-practice)
 ### ドキュメント
 Grails4.04
 <br>
