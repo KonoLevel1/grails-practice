@@ -9,7 +9,7 @@
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ユーザー設定<span class="caret"></span></a>
         <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="user/create/">ユーザーを作成する</a></li>
+            <li class="dropdown-item"><a href="/user/create/">ユーザーを作成する</a></li>
             <li class="dropdown-item"><a href="#">ユーザーを切り替える</a></li>
         </ul>
     </li>

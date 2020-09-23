@@ -31,9 +31,12 @@
     <section class="row colset-2-its">
         <h1>ユーザー作成ページ</h1>
     </section>
+    <g:if test="${flash.message}">
+        <div class="message" role="status">${flash.message}</div>
+    </g:if>
     <div class="center">
     <g:renderErrors bean="${errorUser}" as="list" field="user"/>
-                <form controller="user" action="../registration">
+                <form action="/user/registration">
                     <h3>ハンドルネームを入力してください</h3>
                     <input name="userName" placeholder="Name">
                     <h3>パスワードを入力してください</h3>

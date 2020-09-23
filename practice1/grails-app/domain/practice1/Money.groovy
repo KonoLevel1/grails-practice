@@ -42,6 +42,8 @@ class Money {
         createTime column: 'create_time'
         deleteFlag column: 'delete_flag'
 
+        sort createTime: 'desc'
+
         // バージョンのカラムは生成しない
         version false
     }
