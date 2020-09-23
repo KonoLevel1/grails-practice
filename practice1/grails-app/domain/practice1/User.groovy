@@ -46,5 +46,8 @@ class User {
         createTime column: 'create_time'
         updateTime column: 'update_time'
         deleteFlag column: 'delete_flag'
+
+        // バージョンのカラムは生成しない
+        version false
     }
 }

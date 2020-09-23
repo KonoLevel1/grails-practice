@@ -41,5 +41,8 @@ class Money {
         amount column: 'amount'
         createTime column: 'create_time'
         deleteFlag column: 'delete_flag'
+
+        // バージョンのカラムは生成しない
+        version false
     }
 }
