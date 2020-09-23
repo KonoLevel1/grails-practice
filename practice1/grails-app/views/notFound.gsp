@@ -8,7 +8,7 @@
     <body>
         <ul class="errors">
             <li>Error: Page Not Found (404)</li>
-            <li>Path: ${request.forwardURI}</li>
+            <li>次のページは存在しません　: ${request.forwardURI}</li>
         </ul>
     </body>
 </html>
