@@ -14,7 +14,8 @@ class MoneyController {
         }else{
             println("入力項目がおかしいです")
             flash.message = "入力項目がおかしいです"
-            render(view:'/user/info.gsp', model:[Moneys: Money.findAll(),userName:userName])
+            def moneys = Money.findAllByUserId(user.id)
+            render(view: "/user/info.gsp", model:[Moneys: moneys,userName: userName])
         }
     }
 
@@ -28,19 +29,36 @@ class MoneyController {
         }else{
             println("入力項目がおかしいです")
             flash.message = "入力項目がおかしいです"
-            render(view:'/user/info.gsp', model:[Moneys: Money.findAll(),userName:userName])
+            def moneys = Money.findAllByUserId(user.id)
+            render(view: "/user/info.gsp", model:[Moneys: moneys,userName: userName])
         }
     }
 
     def mainInfo(Integer id, String userName){
-        println("ID：" + id)
-        println("UserName" + userName)
-      //  render(view: "/user/info", model:[Moneys: Money.findAllById(1),userName: userName])
-       // render(Money.findAll())
-        render(view: "/user/info.gsp", model:[Moneys: Money.findAll(),userName: userName])
+       // def moneys = Money.findAllByUserId(id).Money.findAllByDeleteFlag(0)
+        def moneys = Money.findAll{userId == id && deleteFlag == 0}
+        render(view: "/user/info.gsp", model:[Moneys: moneys,userName: userName])
     }
 
     def mainView(){
 
+    }
+
+    def delete(Integer id, String deleteFlag, Integer userId){
+        User user = User.findById(userId)
+
+
+
+        Money money = Money.findById(id)
+        money.setDeleteFlag(1)
+        if (money.validate()){
+            MoneyService.saveMoney(money)
+            redirect(action:"mainInfo",params:[id:user.id,userName:user.userName])
+        }else{
+            println("入力項目がおかしいです")
+            flash.message = "入力項目がおかしいです"
+            def moneys = Money.findAllByUserId(user.id)
+            render(view: "/user/info.gsp", model:[Moneys: moneys,userName: userName])
+        }
     }
 }

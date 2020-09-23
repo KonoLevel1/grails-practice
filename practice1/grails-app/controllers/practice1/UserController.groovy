@@ -48,4 +48,21 @@ class UserController {
         }
     }
 
+    def login(){
+        println("Login")
+        render(view: "/user/login.gsp")
+    }
+
+    def logincheck(String userName, String password){
+        def user1 = User.findByUserName(userName)
+        if (user1.getPassword().equals(password)){
+      //      render(view: "/user/info.gsp", model:[userName: userName])
+            redirect(controller:"money",action:"mainInfo",params:[id:user1.getId(),userName:userName])
+        }else{
+            println("ログイン拒否")
+            flash.message = "ログイン情報が間違っています。"
+            render(view: "/user/login.gsp")
+        }
+    }
+
 }
