@@ -48,6 +48,7 @@
                        <input type="hidden" name="userName" value=${userName}>
                        <button type="submit" class="btn btn-danger">支出登録</button>
                  </form>
+                 <h2>残高　${totalFee}</h2>
                  <table>
                     <tr>
                         <th>内容</th>
