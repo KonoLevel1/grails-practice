@@ -2,6 +2,8 @@ package practice1
 
 import groovy.util.logging.Slf4j
 
+import java.security.MessageDigest
+
 @Slf4j
 class UserController {
     def UserService
@@ -40,7 +42,13 @@ class UserController {
     }
 
     def mainRegistration(String userName, String password) {
-        User user = new User(userName: userName, password: password)
+
+        // パスワードのハッシュ化
+        MessageDigest digest = MessageDigest.getInstance("SHA-1")
+        byte[] result = digest.digest(password.getBytes())
+        String hashPassword = String.format("%040x", new BigInteger(1, result))
+
+        User user = new User(userName: userName, password: hashPassword)
         if (user.validate()){
             UserService.saveUser(user)
             User user2 = User.findByUserName(userName)
@@ -59,7 +67,13 @@ class UserController {
 
     def logincheck(String userName, String password){
         def user1 = User.findByUserName(userName)
-        if (user1.getPassword().equals(password)){
+
+        // パスワードのハッシュ化
+        MessageDigest digest = MessageDigest.getInstance("SHA-1")
+        byte[] result = digest.digest(password.getBytes())
+        String hashPassword = String.format("%040x", new BigInteger(1, result))
+
+        if (user1.getPassword().equals(hashPassword)){
       //      render(view: "/user/info.gsp", model:[userName: userName])
             redirect(controller:"money",action:"mainInfo",params:[id:user1.getId(),userName:userName])
         }else{

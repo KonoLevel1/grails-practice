@@ -598,6 +598,16 @@ img.grails-logo {
 }
 .side{
     display: inline-block;      /* インラインブロック要素にする */
-
     padding: 20px 10px 5px 10px;
+}
+.right{
+    maragin-right:auto;
+}
+.blue{
+    background-color:#ddf;
+    color:#111;
+}
+.red{
+    background-color:#fdd;
+    color:#111;
 }

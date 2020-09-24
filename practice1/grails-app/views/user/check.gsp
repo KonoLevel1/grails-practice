@@ -38,7 +38,7 @@
                     <button onclick="location.href='../user/create/'" type="submit" class="btn btn-warning">やり直す</button>
                  </div>
                  <div class="side">
-                    <form controller="user" action="mainRegistration">
+                    <form controller="user" action="mainRegistration" method="POST">
                         <input type="hidden" name="userName" value=${userName}>
                         <input type="hidden" name="password" value=${password}>
                         <button type="submit" class="btn btn-success">登録</button>

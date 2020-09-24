@@ -36,6 +36,8 @@ class Money {
     Integer deleteFlag = 0
 
     static constraints = {
+        incomeAmount nullable : true, max : 999999999, min : 1
+        spendingAmount nullable : true, max : 999999999, min : 1
     }
 
     //static belongsTo = [user: User]
@@ -56,14 +58,59 @@ class Money {
     }
 
     /**
-     * 残高算出
+     * 収入総計計算
      * 条件　ユーザーIDが同じで論理削除されていない収支
      * @param userId
      * @return
      * @throws SQLException
      */
-    static List<ArrayList> totalFee(Integer userId) throws SQLException {
-       return Money.executeQuery(
-               "select sum(m.amount) from Money m where m.userId = :userId AND m.deleteFlag = 0",[userId: userId])
+    static Integer totalIncome(Integer userId) throws SQLException {
+       def total = Money.executeQuery(
+               "select sum(m.incomeAmount) from Money m where m.userId = :userId AND m.deleteFlag = 0",[userId: userId])
+        if (total[0] == null){
+            return 0
+        }
+        return total[0]
     }
+
+    /**
+     * 支出総計計算
+     * 条件　ユーザーIDが同じで論理削除されていない収支
+     * @param userId
+     * @return
+     * @throws SQLException
+     */
+    static Integer totalSpending(Integer userId) throws SQLException {
+        def total =  Money.executeQuery(
+                "select sum(m.spendingAmount) from Money m where m.userId = :userId AND m.deleteFlag = 0",[userId: userId])
+        if (total[0] == null){
+            return 0
+        }
+        return total[0]
+    }
+
+    /**
+     * 支出総計計算
+     * 条件　ユーザーIDが同じで論理削除されていない収支
+     * @param userId
+     * @return Integer
+     */
+    static Integer totalFee(Integer userId){
+        def totalIncome = totalIncome(userId)
+        def totalSpending = totalSpending(userId)
+        println("金額確認" + totalSpending + totalIncome)
+        return totalIncome - totalSpending
+    }
+
+    /**
+     * 全収支論理削除
+     * 条件　ユーザーIDが同じで論理削除されていない収支
+     * @param userId
+     * @return
+     * @throws SQLException
+     */
+    static void allDelete(Integer userId) throws SQLException {
+        Money.executeQuery("update Money set deleteFlag = 0 where userId = :userId AND deleteFlag = 0",[userId: userId])
+    }
+
 }

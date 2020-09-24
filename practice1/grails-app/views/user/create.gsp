@@ -36,7 +36,7 @@
     </g:if>
     <div class="center">
     <g:renderErrors bean="${errorUser}" as="list" field="user"/>
-                <form action="/user/registration">
+                <form action="/user/registration" method="POST">
                     <h3>ハンドルネームを入力してください</h3>
                     <input name="userName" placeholder="Name">
                     <h3>パスワードを入力してください</h3>
