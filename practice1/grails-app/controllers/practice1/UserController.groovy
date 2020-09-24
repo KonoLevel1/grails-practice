@@ -5,7 +5,11 @@ import groovy.util.logging.Slf4j
 @Slf4j
 class UserController {
     def UserService
-    def index() { }
+    def index() {
+        println("index")
+        def totalRegistration = User.totalRegistration()
+        render(view:"/index.gsp",model:[totalRegistration:totalRegistration[0]])
+    }
 
     def create() {
         println("create")

@@ -1,5 +1,6 @@
 package practice1
 
+import java.sql.SQLException
 import java.time.LocalDateTime
 
 class User {
@@ -49,5 +50,13 @@ class User {
 
         // バージョンのカラムは生成しない
         version false
+    }
+
+    /**
+     * 全ユーザー数算出
+     */
+    static List<ArrayList> totalRegistration() throws SQLException {
+        return User.executeQuery(
+                "select count(userName) from User")
     }
 }
