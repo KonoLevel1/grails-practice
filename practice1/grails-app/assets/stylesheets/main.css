@@ -596,3 +596,8 @@ img.grails-logo {
 .center {
     text-align:center;
 }
+.side{
+    display: inline-block;      /* インラインブロック要素にする */
+
+    padding: 20px 10px 5px 10px;
+}

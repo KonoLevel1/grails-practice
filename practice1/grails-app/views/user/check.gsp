@@ -34,12 +34,16 @@
     <div class="center">
                 <h2>お名前：　${userName}</h2>
                 <h2>パスワード： ${password}</h2>
-                <button onclick="location.href='../user/create/'" type="submit" class="btn btn-warning">やり直す</button>
-                <form controller="user" action="mainRegistration">
-                    <input type="hidden" name="userName" value=${userName}>
-                    <input type="hidden" name="password" value=${password}>
-                    <button type="submit" class="btn btn-success">登録</button>
-                </form>
+                <div class="side">
+                    <button onclick="location.href='../user/create/'" type="submit" class="btn btn-warning">やり直す</button>
+                 </div>
+                 <div class="side">
+                    <form controller="user" action="mainRegistration">
+                        <input type="hidden" name="userName" value=${userName}>
+                        <input type="hidden" name="password" value=${password}>
+                        <button type="submit" class="btn btn-success">登録</button>
+                    </form>
+                </div>
 
      </div>
 </div>
