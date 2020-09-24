@@ -36,6 +36,7 @@
 
     </section>
             <div class="center">
+                <h2>サービス利用人数 ${totalRegistration} 人</h2>
                 <p>
                     練習用アプリ
                 </p>
