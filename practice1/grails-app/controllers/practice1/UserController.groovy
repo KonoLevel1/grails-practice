@@ -35,9 +35,9 @@ class UserController {
                 render(view: "/user/create.gsp")
             }
         }else{
-            println("入力項目がおかしいです")
-            flash.message = "入力項目がおかしいです"
-            render(view: "/user/create.gsp")
+            println("入力項目がおかしいです１０５")
+            println(user)
+            render(view: "/user/create.gsp",model:[errorMessage: user])
         }
     }
 
@@ -54,8 +54,8 @@ class UserController {
             User user2 = User.findByUserName(userName)
             render(view: "/user/info.gsp", model:[userName: userName])
         }else{
-            println("入力項目がおかしいです")
-            flash.message = message("エラー")
+            println("入力項目がおかしいです１０６")
+            //flash.message = "入力内容が正しくありません。"
             render(view:'/user/create.gsp', model:[errorUser: user])
         }
     }
@@ -65,21 +65,36 @@ class UserController {
         render(view: "/user/login.gsp")
     }
 
-    def logincheck(String userName, String password){
-        def user1 = User.findByUserName(userName)
-
-        // パスワードのハッシュ化
-        MessageDigest digest = MessageDigest.getInstance("SHA-1")
-        byte[] result = digest.digest(password.getBytes())
-        String hashPassword = String.format("%040x", new BigInteger(1, result))
-
-        if (user1.getPassword().equals(hashPassword)){
-      //      render(view: "/user/info.gsp", model:[userName: userName])
-            redirect(controller:"money",action:"mainInfo",params:[id:user1.getId(),userName:userName])
-        }else{
+    def logincheck(String userName, String password) {
+        println("ログイン検知")
+        if (userName == null || password == null) {
             println("ログイン拒否")
             flash.message = "ログイン情報が間違っています。"
             render(view: "/user/login.gsp")
+        }
+        println("USERNAME")
+        println(userName)
+        println(password)
+        def user1 = User.findByUserName(userName)
+        if (user1 == null) {
+            println("ログイン拒否")
+            flash.message = "ログイン情報が間違っています。"
+            render(view: "/user/login.gsp")
+        } else {
+
+            // パスワードのハッシュ化
+            MessageDigest digest = MessageDigest.getInstance("SHA-1")
+            byte[] result = digest.digest(password.getBytes())
+            String hashPassword = String.format("%040x", new BigInteger(1, result))
+
+            if (user1.getPassword().equals(hashPassword)) {
+                //      render(view: "/user/info.gsp", model:[userName: userName])
+                redirect(controller: "money", action: "mainInfo", params: [id: user1.getId(), userName: userName])
+            } else {
+                println("ログイン拒否2")
+                flash.message = "ログイン情報が間違っています。"
+                render(view: "/user/login.gsp")
+            }
         }
     }
 

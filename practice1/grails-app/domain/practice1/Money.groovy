@@ -98,7 +98,7 @@ class Money {
     static Integer totalFee(Integer userId){
         def totalIncome = totalIncome(userId)
         def totalSpending = totalSpending(userId)
-        println("金額確認" + totalSpending + totalIncome)
+        println("金額確認" + totalSpending + " " + totalIncome)
         return totalIncome - totalSpending
     }
 
@@ -112,5 +112,18 @@ class Money {
     static void allDelete(Integer userId) throws SQLException {
         Money.executeQuery("update Money set deleteFlag = 0 where userId = :userId AND deleteFlag = 0",[userId: userId])
     }
+
+    /**
+     * 該当ユーザー全情報取得
+     * 条件　ユーザーIDが同じで論理削除されていない収支
+     * @param userId
+     * @return
+     * @throws SQLException
+     */
+    static List<ArrayList> testAll(Integer userId) throws SQLException {
+        return Money.executeQuery(
+                "select format(incomeAmount, '#,###') from Money m where m.userId = :userId AND m.deleteFlag = 0",[userId: userId])
+    }
+
 
 }

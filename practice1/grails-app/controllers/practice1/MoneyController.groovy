@@ -42,6 +42,7 @@ class MoneyController {
 
     def mainInfo(Integer id, String userName){
         def moneys = Money.findAll{userId == id && deleteFlag == 0}
+        //def moneys = Money.testAll(id)
         def totalFee = String.format("%,d",Money.totalFee(id))
         render(view: "/user/info.gsp", model:[Moneys: moneys,userName: userName, totalFee: totalFee])
     }

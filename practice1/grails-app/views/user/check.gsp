@@ -34,6 +34,7 @@
     <div class="center">
                 <h2>お名前：　${userName}</h2>
                 <h2>パスワード： ${password}</h2>
+                <h3>パスワードの再発行は出来ません。必ずお名前とパスワードを控えて下さい。</h3>
                 <div class="side">
                     <button onclick="location.href='../user/create/'" type="submit" class="btn btn-warning">やり直す</button>
                  </div>

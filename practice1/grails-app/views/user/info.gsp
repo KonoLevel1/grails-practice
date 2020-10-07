@@ -3,6 +3,7 @@
 <head>
     <meta name="layout" content="main"/>
     <title>Practice1 | ユーザー作成</title>
+
 </head>
 <body>
 <content tag="nav">
@@ -30,6 +31,10 @@
 <div id="content" role="main">
     <section class="row colset-2-its">
         <h1>${userName}さんのページです。</h1>
+
+
+
+
     </section>
         <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
@@ -68,8 +73,18 @@
                         <tr class="red">
                     </g:else>
                           <td>${it.memo}</td>
-                          <td class="right">${it.incomeAmount}</td>
-                          <td class="right">${it.spendingAmount}</td>
+                          <td class="right">
+                              <script type="text/javascript">
+                                var NUMBER = ${it.incomeAmount}
+                              </script>
+                              <asset:javascript src="number.js"/>
+                          </td>
+                          <td class="right">
+                              <script type="text/javascript">
+                                var NUMBER = ${it.spendingAmount}
+                              </script>
+                              <asset:javascript src="number.js"/>
+                          </td>
                           <td>${it.createTime}</td>
                           <td><form action="/money/update"><input type="hidden" name="userId" value=${it.userId}><input type="hidden" name="id" value=${it.id}><button type="submit" class="btn btn-info btn-sm">編集</button></form></td>
                           <td><form action="/money/delete"><input type="hidden" name="userId" value=${it.userId}><input type="hidden" name="id" value=${it.id}><button type="submit" class="btn btn-danger btn-sm">削除</button></form></td>

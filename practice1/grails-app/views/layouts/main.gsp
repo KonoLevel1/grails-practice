@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
     <a class="navbar-brand" href="/#"><asset:image src="beginner.png" alt="Beginner Logo"/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +26,27 @@
             <g:pageProperty name="page.nav"/>
         </ul>
     </div>
-
+<content tag="nav">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ユーザー設定<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="/user/create/">ユーザーを作成する</a></li>
+            <li class="dropdown-item"><a href="/user/login/">ログインする</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">収支登録<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="#">作成中</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">設定<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="#">作成中</a></li>
+        </ul>
+    </li>
+</content>
 </nav>
 
 <g:layoutBody/>

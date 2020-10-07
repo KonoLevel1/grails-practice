@@ -34,7 +34,15 @@
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
+
     <div class="center">
+        <g:hasErrors bean="${errorMessage}">
+            <ul>
+                <g:eachError var="err" bean="${errorMessage}">
+                    <li><g:message error="${err}" /></li>
+                </g:eachError>
+            </ul>
+        </g:hasErrors>
     <g:renderErrors bean="${errorUser}" as="list" field="user"/>
                 <form action="/user/registration" method="POST">
                     <h3>ハンドルネームを入力してください</h3>
