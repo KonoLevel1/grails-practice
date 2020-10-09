@@ -592,3 +592,13 @@ img.grails-logo {
     height:340px;
     margin-top:-10px;
 }
+
+.center {
+    text-align:center;
+}
+.back-blue {
+    background-color:#eef;
+}
+.back-green {
+    background-color:#efe;
+}

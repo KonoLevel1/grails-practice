@@ -19,7 +19,15 @@
     <div class="message" role="status">${flash.message}</div>
 </g:if>
 <div class="center">
-    <h2>Grails SNS Application<h2>
+    <form action="/sns/topicRegister" method="POST">
+        <h3>通知を送るメールアドレスを入力してください</h3>
+        <input oncopy="return false" ompaste="return false" oncontextmenu="return false" name="email" placeholder="Enter the email address">
+        <h3>通知を送るメールアドレスを再度入力してください</h3>
+        <input oncopy="return false" ompaste="return false" oncontextmenu="return false" name="reEmail" placeholder="Enter the email address">
+        <h3>問題なければ登録</h3>
+        <button type="submit" class="btn btn-success">登録</button>
+    </form>
 </div>
+
 </body>
 </html>

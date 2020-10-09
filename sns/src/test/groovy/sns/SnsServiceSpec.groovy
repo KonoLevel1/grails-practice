@@ -3,7 +3,7 @@ package sns
 import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
-class SNSServiceSpec extends Specification implements ServiceUnitTest<SNSService>{
+class SnsServiceSpec extends Specification implements ServiceUnitTest<SnsService>{
 
     def setup() {
     }

@@ -109,8 +109,10 @@ environments:
         dataSource:
             dbCreate: create-drop
             url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
-        pushMessage: '{"default": "通知メッセージ" ,"email": "通知メッセージ","APNS": {"aps":{"alert":"通知メッセージ"}}}'
-        topicArn: ""
+        # 通知により送信されるメッセージ １３文字以上は設定しないでください。
+        message: "デフォルトメッセージ"
+        # 通知を行うトピック
+        topicArn: "ここに、AWS Simple Notification Service の トピック ARNを設定してください"
     test:
         dataSource:
             dbCreate: update
