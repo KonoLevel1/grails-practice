@@ -93,3 +93,10 @@ test-app                                アプリケーションのテストを�
 url-mappings-report                     プロジェクトのURLマッピングレポートを出力
 
 ```
+### Asset-Pipeline
+JavaScirptやCSS,imageの呼び出しを簡単に行えるプラグイン
+```
+<asset:stylesheet src="hoge.css"/>
+<asset:javascript src="hoge.js"/>
+<asset:image src="hoge.png"/>
+```
